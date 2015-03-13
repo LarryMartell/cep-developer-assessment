@@ -40,33 +40,6 @@ class Exercise1():
             f.write(re.sub(r'(\.\d+?)0+\b', r'\1', meanData.describe().to_csv(None, float_format='%0.16f')))
             f.close()
 
-            # stats data
-            #statsKeys = ['median', 'std', 'min', '25%', '50%', '75%', 'max']
-            #stats = {}
-            #stats['min'] =  meanData.min().to_dict()
-            #stats['max'] = meanData.max().to_dict()
-            #stats['median'] = meanData.median().to_dict()
-            #stats['std'] = meanData.std().to_dict()
-            #stats['25%'] = meanData.quantile(.25).to_dict()
-            #stats['50%'] = meanData.quantile(.50).to_dict()
-            #stats['75%'] = meanData.quantile(.75).to_dict()
-#
-#            with open(self.statsFile, 'wb') as csvfile:
-#                w = csv.writer(csvfile)
-#                w.writerow(['']+self.questions)
-#                r = ['count']
-#                for question in self.questions:
-#                    r += ["%0.1f" % len(meanData)]
-#                w.writerow(r)
-#                for s in statsKeys:
-#                    r = [s]
-#                    for question in self.questions:
-#                        r += [stats[s][question]]
-#                    w.writerow(r)
-#
-#            csvfile.close()
-
-
         except Exception, e:
             (type, value, tb) = sys.exc_info()
             traceback.print_exception(type, value, tb)
